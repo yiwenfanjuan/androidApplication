@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Android开发学习</string>
+
+    <!--Create操作符信息-->
+    <string name="create_operate_info">
+        create操作符主要用于产生一个Observable被观察者对象，也可以成为发射器（上游事件）,
+        与之对应的观察者Observer称为接收器(下游事件)
+    </string>
+
+    <string name="map_operate_info">
+        Map操作符的作用是对发射事件发送每一个事件应用一个函数，使得每一个事件都按照指定的函数去变化
+    </string>
+
+    <string name="zip_operate_info">
+        Zip操作符用于合并事件，该合并并不是连接，而是两两配对，也就意味着，最终配对出的Observable发射
+        事件的数目只和少的那个相同
+    </string>
+
+    <string name="concat_operate_info">
+        Concat操作符用于将两个发射器合并成一个发射器
+    </string>
+
+    <string name="flat_map_operate_info">
+        flatMap可以把一个发射器Observable通过某种方法转换为多个Observables，然后再把这些分散的Observables
+        装进一个单一的发射器Observable，但是需要注意的是，flatMap并不能保证事件的顺序。
+    </string>
+
+    <string name="concat_map_operate_info">
+        concatMap和flatMap的作用是一样的，不同之处在于保证了时间发送的顺序。
+    </string>
 </resources>

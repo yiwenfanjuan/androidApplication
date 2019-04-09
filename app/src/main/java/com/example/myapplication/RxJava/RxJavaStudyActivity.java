@@ -1,0 +1,40 @@
+package com.example.myapplication.RxJava;
+
+import android.content.Intent;
+import android.view.View;
+
+import com.example.myapplication.BaseActivity;
+import com.example.myapplication.R;
+import com.example.myapplication.databinding.ActivityRxJavaStudyBinding;
+
+public class RxJavaStudyActivity extends BaseActivity<ActivityRxJavaStudyBinding> {
+
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_rx_java_study;
+    }
+
+    @Override
+    protected void initUi() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    public void doClick(View view) {
+        Intent intent = new Intent();
+        switch (view.getId()) {
+            case R.id.btn_operator1:
+                intent.setClass(this, RxJavaStudyOperator1Activity.class);
+                break;
+        }
+
+
+        startActivity(intent);
+    }
+
+}

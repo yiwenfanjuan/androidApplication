@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@[package:]drawable/drawable_resource"
+    android:antialias="true | false"
+    android:dither="true | false"
+    android:filter="true | false"
+    android:gravity="top | bottom | left | right | center_vertical | fill_vertical |
+                center_horizontal | fill_horizontal | center | fill | clip_vertical |
+                clip_horizontal"
+    android:mipMap="true | false"
+    android:tileMode="disabled | clamp | repeat | mirror"
+    >
+    -->
+    <!--含义如下-->
+    <!--
+        src:图片的资源id
+        antialias:是否开启图片抗锯齿功能，开启后会让图片变得平滑，同时也会在一定程度上
+                  降低图片的清晰度，但是这个降低的幅度较低以至于可以忽略，因此抗锯齿选项
+                  应该开启
+        dither:是否开启抖动效果，当图片的像素配置和手机屏幕的像素配置不一致时，开启这个
+               选项可以让高质量的图片在低质量的屏幕上还能保持较好的显示效果，比如图片的
+               色彩模式为ARGB8888，但是设备屏幕s所支持的色彩模式为RGB555，这个时候开启
+               抖动选项可以让图片显示不会过于失真，在Android中创建的Bitmap一般会选用
+               ARGB8888这种模式，即ARGB四个通道各占8位，在这种色彩模式下，一个像素所占的
+               大小为四个字节，一个像素的位数总和越高，图像也就越逼真，根据分析，抖动效果也应该
+               开启。
+         filter:是否开启过滤效果，当图片尺寸被拉伸或者压缩时，开启过滤效果可以保持较好的
+                显示效果，此选项应该开启
+         gravity:当图片小于容器的尺寸时，设置此选项可以对图片进行定位，这个属性的可选项
+                比较多，不同选项可以通过"|"来组合
+
+                可选项                                 含义
+                top                 将图片放在容器的顶部，不改变图片大小
+                bottom              将图片放在容器的底部，不改变图片大小
+                left                将图片放在容器的左边，不改变图片大小
+                right               将图片放在容器的右边，不改变图片大小
+                center_vertical     将图片竖直居中，不改变图片大小
+                fill_vertical       图片竖直方向填充容器
+                center_horizontal   将图片水平居中，不改变图片大小
+                fill_horizontal     图片水平方向填充容器
+                center              使图片在水平和竖直方向同时居中，不改变图片大小
+                fill                图片在水平和竖直方向上均填充容器，这是默认值
+                clip_vertical       附加选项，表示竖直方向的裁剪
+                clip_horizontal     附加选项，表示水平方向的裁剪
+    -->
+
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@mipmap/ic_launcher">
+
+
+</bitmap>
