@@ -28,4 +28,41 @@
     <string name="concat_map_operate_info">
         concatMap和flatMap的作用是一样的，不同之处在于保证了时间发送的顺序。
     </string>
+
+    <string name="distinct_operate_info">
+        distinct操作符的作用是去重。
+    </string>
+
+    <string name="filter_operate_info">
+        filter操作符可以根据我们设置的条件过滤掉不符合条件的事件。
+    </string>
+
+    <string name="buffer_operate_info">
+        buffer操作符接受两个参数，buffer(count,skip)，作用是将Observable中的数据按skip(步长)
+        分成最多是不超过count的buffer，然后生成一个Observable.
+    </string>
+
+    <string name="timer_operate_info">
+        timer相当于一个定时任务，需要注意的是,timer默认在新线程中。
+    </string>
+
+    <string name="interval_operate_info">
+        interval操作符用于间隔一段时间执行某个操作,和timer一样，默认在新线程中执行。
+    </string>
+
+    <string name="doOnNext_operate_info">
+        doNext操作符用于在订阅者接收到数据之前做一些开发者自定义的操作，例如保存数据。
+    </string>
+
+    <string name="skip_operate_info">
+        skip操作符用于跳过前面多少个数目开始接收。
+    </string>
+
+    <string name="take_operate_info">
+        take操作符用于表示至多接收多少个数据.
+    </string>
+
+    <string name="just_operate_info">
+        just操作符的作用就是一个发射器依次调用onNext()方法
+    </string>
 </resources>

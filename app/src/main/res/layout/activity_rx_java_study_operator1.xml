@@ -193,6 +193,113 @@
                     android:onClick="doClick"
                     />
 
+                <Button
+                    android:id="@+id/btn_operator_distinct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_operator_concat_map"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="distinct操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
+                <Button
+                    android:id="@+id/btn_filter_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_operator_distinct"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="filter操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
+                <Button
+                    android:id="@+id/btn_buffer_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_filter_operator"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="buffer操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
+                <Button
+                    android:id="@+id/btn_timer_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_buffer_operator"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="timer操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
+                <Button
+                    android:id="@+id/btn_interval_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_timer_operator"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="interval操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
+                <Button
+                    android:id="@+id/btn_doOnNext_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_interval_operator"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="doOnNext操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
+                <Button
+                    android:id="@+id/btn_skip_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_doOnNext_operator"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="skip操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+                <Button
+                    android:id="@+id/btn_operator_take"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_skip_operator"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="take操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
+                <Button
+                    android:id="@+id/btn_operator_just"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/btn_operator_take"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="just操作符"
+                    android:textAllCaps="false"
+                    android:onClick="doClick"
+                    />
+
 
             </android.support.constraint.ConstraintLayout>
 
