@@ -65,4 +65,37 @@
     <string name="just_operate_info">
         just操作符的作用就是一个发射器依次调用onNext()方法
     </string>
+
+    <string name="Single_operator_info">
+        Single只会接收一个参数，而SingleObserver只会调用onError()或者onSuccess.
+    </string>
+
+    <string name="debounce_operator_info">
+        debounce用于去除那些发送频率过快的项。
+    </string>
+
+    <string name="defer_operator_info">
+        defer操作符每次发送数据都会创建一个新的Observable,并且在没有被订阅，就不会产生新的Observable.
+    </string>
+
+    <string name="last_operator_info">
+        last操作符仅取出可观察到的最后一个值，或者是满足某些条件的最后一项。
+    </string>
+
+    <string name="merge_operator_info">
+        merge操作符的作用是把多个Observable结合起来，接收可变参数，也支持迭代集合，他和concat的区别在于，不用等到发射器A
+        发送完所有事件再进行发射器B的发送
+    </string>
+
+    <string name="reduce_operator_info">
+        reduce操作符每次用一个方法处理一个值，可以有一个Seed作为初始值
+    </string>
+
+    <string name="scan_operator_info">
+        scan操作符和reduce操作符的功能相似，但是reduce只会输出最终的结果值，但是scan会将每一步执行的结果都进行输出。
+    </string>
+
+    <string name="window_operator_info">
+        按照实际划分窗口，将数据发送给不同的observable.
+    </string>
 </resources>

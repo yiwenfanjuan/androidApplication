@@ -10,6 +10,8 @@ import com.example.myapplication.databinding.ActivityRxJavaStudyOperator1Binding
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -18,6 +20,8 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
+import io.reactivex.Single;
+import io.reactivex.SingleObserver;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
@@ -29,6 +33,7 @@ public class RxJavaStudyOperator1Activity extends BaseActivity<ActivityRxJavaStu
 
     private String result;
     private Disposable mDisposable;
+    private final StringBuilder resultString = new StringBuilder("接收到的数据：");
 
     @Override
     protected int getLayoutId() {
@@ -111,6 +116,41 @@ public class RxJavaStudyOperator1Activity extends BaseActivity<ActivityRxJavaStu
             case R.id.btn_operator_just:
                 mBinding.setOperateInfo(getString(R.string.just_operate_info));
                 clickJustOperate();
+                break;
+            case R.id.btn_operator_Single:
+                mBinding.setOperateInfo(getString(R.string.Single_operator_info));
+                mBinding.setCommandInfo("发送一个随机数");
+                clickSingleOperator();
+                break;
+            case R.id.btn_operator_debounce:
+                mBinding.setOperateInfo(getString(R.string.debounce_operator_info));
+                mBinding.setCommandInfo("每一次发送之后线程暂停一段时间");
+                clickDebounceOperator();
+                break;
+            case R.id.btn_operator_defer:
+                mBinding.setOperateInfo(getString(R.string.defer_operator_info));
+                mBinding.setCommandInfo("使用defer发送数据");
+                clickDeferOperator();
+                break;
+            case R.id.btn_operator_last:
+                mBinding.setOperateInfo(getString(R.string.last_operator_info));
+                clickLastOperator();
+                break;
+            case R.id.btn_operator_merge:
+                mBinding.setOperateInfo(getString(R.string.merge_operator_info));
+                clickMergeOperator();
+                break;
+            case R.id.btn_operator_reduce:
+                mBinding.setOperateInfo(getString(R.string.reduce_operator_info));
+                clickReduceOperator();
+                break;
+            case R.id.btn_operator_scan:
+                mBinding.setOperateInfo(getString(R.string.scan_operator_info));
+                clickScanOperator();
+                break;
+            case R.id.btn_operator_window:
+                mBinding.setOperateInfo(getString(R.string.window_operator_info));
+                clickWindowOperator();
                 break;
         }
     }
@@ -437,42 +477,232 @@ public class RxJavaStudyOperator1Activity extends BaseActivity<ActivityRxJavaStu
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                        Log.i(TAG,"doOnNext accept:"+s);
+                        Log.i(TAG, "doOnNext accept:" + s);
                     }
                 });
     }
 
     //点击skip操作符
-    private void clickSkipOperate(){
-        Observable.just(1,2,3,4,5)
+    private void clickSkipOperate() {
+        Observable.just(1, 2, 3, 4, 5)
                 .skip(2)
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        Log.i(TAG,"skip accept:"+integer);
+                        Log.i(TAG, "skip accept:" + integer);
                     }
                 });
     }
 
     //点击take操作符
-    private void clickTakeOperate(){
-        Observable.just(100,200,300,400)
+    private void clickTakeOperate() {
+        Observable.just(100, 200, 300, 400)
                 .take(2)
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        Log.i(TAG,"take accept:"+integer);
+                        Log.i(TAG, "take accept:" + integer);
                     }
                 });
     }
 
     //点击just操作符
-    private void clickJustOperate(){
-        Observable.just(1,2,3,4)
+    private void clickJustOperate() {
+        Observable.just(1, 2, 3, 4)
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(Integer integer) throws Exception {
-                        Log.i(TAG,"just accept:"+integer);
+                        Log.i(TAG, "just accept:" + integer);
+                    }
+                });
+    }
+
+    //点击Single操作符
+    private void clickSingleOperator() {
+        Single.just(new Random().nextInt())
+                .subscribe(new SingleObserver<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(Integer integer) {
+                        mBinding.setResultInfo("接收到的随机数：" + integer);
+                        Log.i(TAG, "Single onSuccess:" + integer);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.i(TAG, "Single onError:" + e.getMessage());
+                    }
+                });
+    }
+
+    //点击debounce操作符
+    private void clickDebounceOperator() {
+
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws InterruptedException {
+                emitter.onNext(1);
+                Thread.sleep(400);
+                emitter.onNext(2);
+                Thread.sleep(505);
+                emitter.onNext(3);
+                Thread.sleep(100);
+                emitter.onNext(4);
+                Thread.sleep(605);
+                emitter.onNext(5);
+                Thread.sleep(510);
+                emitter.onNext(6);
+                Thread.sleep(100);
+                emitter.onComplete();
+            }
+        }).debounce(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.newThread())
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        resultString.append(integer.toString());
+                        mBinding.setResultInfo(resultString.toString());
+                        Log.i(TAG, "debounce accept:" + integer);
+                    }
+                });
+    }
+
+    //点击defer操作符
+    private void clickDeferOperator() {
+        //创建一个observable
+        Observable<Integer> observable = Observable.defer(
+                new Callable<ObservableSource<? extends Integer>>() {
+                    @Override
+                    public ObservableSource<? extends Integer> call() throws Exception {
+                        return Observable.just(1, 2, 3);
+                    }
+                }
+        );
+        //创建Observer
+        Observer<Integer> observer = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.i(TAG, "defer observer onSubscribe:" + d.toString());
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.i(TAG, "defer observer onNext:" + integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "defer observer onError:" + e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                mBinding.setResultInfo(resultString.toString());
+                Log.i(TAG, "defer observer onComplete");
+            }
+        };
+
+        observable.subscribe(observer);
+    }
+
+    //点击last操作符
+    private void clickLastOperator() {
+        Observable.just(100, 200, 300)
+                .last(3)
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        resultString.append(integer.toString());
+                        mBinding.setResultInfo(resultString.toString());
+                        Log.i(TAG, "last accept:" + integer);
+                    }
+
+                });
+    }
+
+    //点击merge操作符
+    private void clickMergeOperator() {
+        Observable.merge(Observable.just(1, 2, 3), Observable.just(5, 7, 8))
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) throws Exception {
+                        Log.i(TAG, "merge accept:" + integer);
+                    }
+                });
+    }
+
+    //点击reduce操作符
+    private void clickReduceOperator() {
+        Observable.just(1, 2, 3)
+                .reduce(100, new BiFunction<Integer, Integer, Integer>() {
+                    @Override
+                    public Integer apply(Integer integer, Integer integer2) throws Exception {
+                        return integer + integer2;
+                    }
+                }).subscribe(new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) throws Exception {
+                Log.i(TAG, "reduce accept:" + integer);
+            }
+        });
+    }
+
+    //点击scan操作符
+    private void clickScanOperator() {
+        Observable.just(1, 2, 3, 4)
+                .scan(200, new BiFunction<Integer, Integer, Integer>() {
+                            @Override
+                            public Integer apply(Integer integer, Integer integer2) {
+                                return integer / integer2;
+                            }
+                        }
+                ).subscribe(new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.i(TAG, "scan observer onSubscribe:" + d.toString());
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Log.i(TAG, "scan observer onNext:" + integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.i(TAG, "scan observer onError:" + e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+                Log.i(TAG,"scan observer onComplete");
+            }
+        });
+    }
+
+    //点击window操作符
+    private void clickWindowOperator(){
+        //mBinding.tvResult.append("window\n");
+        Log.i(TAG,"window\n");
+        Observable.interval(1,TimeUnit.SECONDS)
+                .take(15)
+                .window(3)
+                .subscribe(new Consumer<Observable<Long>>() {
+                    @Override
+                    public void accept(Observable<Long> longObservable) throws Exception {
+                        //mBinding.tvResult.append("Sub Divide begin ... \n");
+                        Log.i(TAG,"Sub Divide begin ... \n");
+                        longObservable
+                                .subscribe(new Consumer<Long>() {
+                                    @Override
+                                    public void accept(Long aLong) throws Exception {
+                                        //mBinding.tvResult.append("Next:"+aLong+"\n");
+                                        Log.i(TAG,"Next "+aLong+" \n");
+                                    }
+                                });
                     }
                 });
     }
