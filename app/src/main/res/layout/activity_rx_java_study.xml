@@ -26,6 +26,32 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 />
 
+            <!--简介-->
+            <Button
+                android:id="@+id/btn_rxJava_introduction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_operator1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="rxJava简介"
+                android:textAllCaps="false"
+                android:onClick="doClick"
+                />
+
+            <!--过滤操作符-->
+            <Button
+                android:id="@+id/btn_rxJava_filter_operation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_rxJava_introduction"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="RxJava2过滤操作符"
+                android:textAllCaps="false"
+                android:onClick="doClick"
+                />
+
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v4.widget.NestedScrollView>

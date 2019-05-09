@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.myapplication.RxJava.RxJavaStudyActivity;
+import com.example.myapplication.amap.AMapTestActivity1;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,5 +21,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ScrollLayoutTestActivity.class));
             }
         });
+
+        findViewById(R.id.btn_rxJava).setOnClickListener((view) ->{
+            startActivity(new Intent(MainActivity.this,RxJavaStudyActivity.class));
+        });
+
+        findViewById(R.id.btn_amap).setOnClickListener((view)->{
+            startActivity(new Intent(MainActivity.this, AMapTestActivity1.class));
+        });
+
     }
 }

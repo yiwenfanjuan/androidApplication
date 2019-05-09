@@ -14,4 +14,24 @@
         android:text="ScrollerLayout Demo测试"
         />
 
+    <Button
+        android:id="@+id/btn_rxJava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_scroller"
+        android:text="RxJava学习"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <!--高德地图演示-->
+    <Button
+        android:id="@+id/btn_amap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_rxJava"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="高德地图"
+        android:textAllCaps="false"
+        />
+
 </android.support.constraint.ConstraintLayout>
