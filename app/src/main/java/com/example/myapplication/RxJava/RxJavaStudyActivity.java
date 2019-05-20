@@ -37,6 +37,15 @@ public class RxJavaStudyActivity extends BaseActivity<ActivityRxJavaStudyBinding
             case R.id.btn_rxJava_filter_operation:
                 intent.setClass(this,RxJavaStudyFilterOperationActivity.class);
                 break;
+            case R.id.btn_rxJava_merge_operator:
+                intent.setClass(this,RxJavaStudyMergeOperatorActivity.class);
+                break;
+            case R.id.btn_condition_operator:
+                intent.setClass(this,RxJavaStudyConditionOperatorActivity.class);
+                break;
+            case R.id.btn_transform_operator:
+                intent.setClass(this,RxJavaStudyTransformOperatorActivity.class);
+                break;
         }
         startActivity(intent);
     }

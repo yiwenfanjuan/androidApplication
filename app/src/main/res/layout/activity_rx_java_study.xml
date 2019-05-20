@@ -52,6 +52,40 @@
                 android:onClick="doClick"
                 />
 
+            <!--合并聚合操作符-->
+            <Button
+                android:id="@+id/btn_rxJava_merge_operator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_rxJava_filter_operation"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="RxJava2合并聚合操作符"
+                android:textAllCaps="false"
+                android:onClick="doClick"
+                />
+
+            <!--条件操作符-->
+            <Button
+                android:id="@+id/btn_condition_operator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btn_rxJava_merge_operator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="RxJava2条件操作符"
+                android:textAllCaps="false"
+                android:onClick="doClick"
+                />
+
+            <!--转换操作符-->
+            <Button
+                android:id="@+id/btn_transform_operator"
+                style="@style/NormalButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_condition_operator"
+                android:text="RxJava2转换操作符"
+                />
+
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v4.widget.NestedScrollView>

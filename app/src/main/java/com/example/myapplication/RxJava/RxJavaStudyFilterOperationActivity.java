@@ -1,5 +1,6 @@
 package com.example.myapplication.RxJava;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +8,8 @@ import android.util.Log;
 import com.example.myapplication.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityRxJavaStudyFilterOperationBinding;
+
+import org.reactivestreams.Publisher;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +40,12 @@ public class RxJavaStudyFilterOperationActivity extends BaseActivity<ActivityRxJ
         //useElementAt();
         //useOfType();
         //useSkipOrSkipLast();
-        useIgnoreElements();
+        //useIgnoreElements();
+        //useDistinct();
+        //useTimeout();
+        //useThrottleFirst();
+        //useThrottleLastOrSample();
+        useThrottleWithTimeoutOrDebounce();
     }
 
     //使用filter过滤出大于等于2的数据
@@ -176,4 +184,82 @@ public class RxJavaStudyFilterOperationActivity extends BaseActivity<ActivityRxJ
                 );
     }
 
+
+    private void useDistinct(){
+        //使用distinct过滤掉重复的元素
+        Flowable.just(1,1,2,3,3,2,1,2,3)
+                .distinct()
+                .subscribe((element) -> {
+                    Log.i(TAG,"distinct onNext : " + element);
+                });
+        //使用distinctUntilChanged过滤掉连续的重复元素
+        Flowable.just(1,1,2,3,3,2,1,2,3)
+                .distinctUntilChanged()
+                .subscribe((element) -> {
+                    Log.i(TAG,"distinctUntilChanged onNext : "+element);
+                });
+    }
+
+    //使用timeout过滤超时操作
+    private void useTimeout(){
+//        //遇到超时操作会抛出异常
+//        Flowable.intervalRange(0,20,0,2,TimeUnit.SECONDS)
+//                .timeout(1,TimeUnit.SECONDS)
+//                .subscribe((element) -> Log.i(TAG,"timeout onNext : "+element),
+//                        (error) -> Log.i(TAG,"timeout onError : "+error.getMessage())
+//                        );
+
+        //遇到超时操作使用自定义的逻辑
+        Flowable.intervalRange(10,20,0,1,TimeUnit.SECONDS)
+                .timeout(1,TimeUnit.SECONDS, Flowable.just(100L))
+                .subscribe((element) -> Log.i(TAG,"timeout onNext: "+element));
+    }
+
+    //使用throttleFirst在一段时间内只执行第一次的操作
+    private void useThrottleFirst(){
+        Flowable.intervalRange(10,20,0,1,TimeUnit.SECONDS)
+                .throttleFirst(2,TimeUnit.SECONDS)//每2秒钟只处理第一个元素
+                .subscribe((element) -> Log.i(TAG,"throttleFirst onNext : "+element));
+
+    }
+
+    //使用throttleLast和sample操作符可以实现隔一段时间采集一次数据
+    private void useThrottleLastOrSample(){
+        Flowable.intervalRange(0,10,0,1,TimeUnit.SECONDS)
+                .throttleLast(2,TimeUnit.SECONDS)
+                .subscribe(
+                        (element) -> Log.i(TAG,"throttleLast onNext: "+element),
+                        (error) -> Log.i(TAG,"throttleLast onError : "+error.getMessage()),
+                        ()->Log.i(TAG,"throttleLast onComplete")
+                );
+
+        Flowable.intervalRange(0,10,0,1,TimeUnit.SECONDS)
+                .sample(2,TimeUnit.SECONDS)
+                .subscribe(
+                        (element) -> Log.i(TAG,"sample onNext : "+ element),
+                        (error) -> Log.i(TAG,"sample onError : "+error.getMessage()),
+                        () -> Log.i(TAG,"sample onComplete")
+                );
+
+        Flowable.intervalRange(0,10,0,1,TimeUnit.SECONDS)
+                .sample(Flowable.just(100L))
+                .subscribe(
+                        (element) -> Log.i(TAG,"sample onNext : "+ element),
+                        (error) -> Log.i(TAG,"sample onError : "+error.getMessage()),
+                        () -> Log.i(TAG,"sample onComplete")
+                );
+    }
+
+    //使用throttleWithTimeout或者Debounce
+    private void useThrottleWithTimeoutOrDebounce(){
+        Flowable.intervalRange(0,10,0,1,TimeUnit.SECONDS)
+                .throttleWithTimeout(2,TimeUnit.SECONDS)
+                .subscribe((element) -> Log.i(TAG,"throttleWithTimeout onNext : " + element));
+
+        Flowable.intervalRange(0,10,0,1,TimeUnit.SECONDS)
+                .debounce(2,TimeUnit.SECONDS)
+                .subscribe(
+                        (element) -> Log.i(TAG,"debounce onNext : "+element)
+                );
+    }
 }

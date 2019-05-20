@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--android:src="@[package:]drawable/drawable_resource"-->
+<nine-patch xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/bitmap_drawable_test1"
+    android:dither="true"
+    android:gravity="center"
+    android:tileMode="clamp"
+    >
+
+</nine-patch>

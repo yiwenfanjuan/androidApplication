@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.View;
 
 /**
  * description：
@@ -36,4 +37,9 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatA
 
     //初始化数据相关
     protected abstract void initData();
+
+    //点击事件
+    public void doClick(View view){
+
+    }
 }

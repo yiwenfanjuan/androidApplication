@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><!--RxJava合并聚合操作符-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RxJava.RxJavaStudyMergeOperatorActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--startWith操作符演示-->
+        <Button
+            android:id="@+id/btn_start_with"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="startWith操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <!--startWithArray操作符-->
+        <Button
+            android:id="@+id/btn_start_with_array"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_start_with"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="startWithArray操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--concat操作符演示-->
+        <Button
+            android:id="@+id/btn_concat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_start_with_array"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="concat操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--concatArray操作符演示-->
+        <Button
+            android:id="@+id/btn_concat_array"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_concat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="concatArray操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--merge操作符演示-->
+        <Button
+            android:id="@+id/btn_merge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_concat_array"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="merge操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--concatDelayError操作符演示-->
+        <Button
+            android:id="@+id/btn_merge_delay_error"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_merge"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="mergeDelayError操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--zip操作符演示-->
+        <Button
+            android:id="@+id/btn_zip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_merge_delay_error"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="zip操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--combineLatest操作符演示-->
+        <Button
+            android:id="@+id/btn_combine_latest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_zip"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="combineLatest操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+        <!--combineLatestDelayError操作符演示-->
+        <Button
+            android:id="@+id/btn_combine_latest_delay_error"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_combine_latest"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="combineLatestDelayError操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+        <!--reduce操作符演示-->
+        <Button
+            android:id="@+id/btn_reduce"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_combine_latest_delay_error"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="reduce操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--count操作符演示-->
+        <Button
+            android:id="@+id/btn_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_reduce"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="count操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--collect操作符-->
+        <Button
+            android:id="@+id/btn_collect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_count"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="collect操作符演示"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

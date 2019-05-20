@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RxJava.RxJavaStudyTransformOperatorActivity"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--map操作符-->
+        <Button
+            android:id="@+id/btn_map"
+            style="@style/NormalButtonStyle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="map操作符"
+            />
+
+        <!--flatMap操作符-->
+        <Button
+            android:id="@+id/btn_flat_map"
+            style="@style/NormalButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/btn_map"
+            android:text="flatMap操作符"
+            />
+
+        <!--flatMapIterable操作符-->
+        <Button
+            android:id="@+id/btn_flat_map_iterable"
+            app:layout_constraintTop_toBottomOf="@id/btn_flat_map"
+            style="@style/NormalButtonStyle"
+            android:text="flatMapIterable操作符"
+            />
+
+        <!--concatMap操作符-->
+        <Button
+            android:id="@+id/btn_concat_map"
+            app:layout_constraintTop_toBottomOf="@id/btn_flat_map_iterable"
+            style="@style/NormalButtonStyle"
+            android:text="concatMap操作符"
+            />
+
+        <!--switchMap操作符-->
+        <Button
+            android:id="@+id/btn_switch_map"
+            app:layout_constraintTop_toBottomOf="@id/btn_concat_map"
+            style="@style/NormalButtonStyle"
+            android:text="switchMap操作符"
+            />
+
+        <!--cast操作符-->
+        <Button
+            android:id="@+id/btn_cast"
+            app:layout_constraintTop_toBottomOf="@id/btn_switch_map"
+            style="@style/NormalButtonStyle"
+            android:text="cast操作符"
+            />
+
+        <!--scan操作符-->
+        <Button
+            android:id="@+id/btn_scan"
+            app:layout_constraintTop_toBottomOf="@id/btn_cast"
+            style="@style/NormalButtonStyle"
+            android:text="scan操作符"
+            />
+
+        <!--buffer操作符-->
+        <Button
+            android:id="@+id/btn_buffer"
+            app:layout_constraintTop_toBottomOf="@id/btn_scan"
+            style="@style/NormalButtonStyle"
+            android:text="buffer操作符"
+            />
+
+        <!--toList-->
+        <Button
+            android:id="@+id/btn_to_list"
+            app:layout_constraintTop_toBottomOf="@id/btn_buffer"
+            style="@style/NormalButtonStyle"
+            android:text="toList操作符"
+            />
+
+        <!--toSortedList操作符-->
+        <Button
+            android:id="@+id/btn_to_sorted_list"
+            app:layout_constraintTop_toBottomOf="@id/btn_to_list"
+            style="@style/NormalButtonStyle"
+            android:text="toSortedList操作符"
+            />
+
+        <!--groupBy操作符-->
+        <Button
+            android:id="@+id/btn_group_by"
+            app:layout_constraintTop_toBottomOf="@id/btn_to_sorted_list"
+            style="@style/NormalButtonStyle"
+            android:text="groupBy操作符"
+            />
+
+        <!--toMap操作符-->
+        <Button
+            android:id="@+id/btn_to_map"
+            app:layout_constraintTop_toBottomOf="@id/btn_group_by"
+            style="@style/NormalButtonStyle"
+            android:text="toMap操作符"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

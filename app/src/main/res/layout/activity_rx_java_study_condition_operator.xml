@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RxJava.RxJavaStudyConditionOperatorActivity"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--all操作符-->
+        <Button
+            android:id="@+id/btn_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="all操作符"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--armArray操作符-->
+        <Button
+            android:id="@+id/btn_amb_array"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_all"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="ambArray操作符"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--contains操作符-->
+        <Button
+            android:id="@+id/btn_contains"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_amb_array"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="contains操作符"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--any操作符-->
+        <Button
+            android:id="@+id/btn_any"
+            app:layout_constraintTop_toBottomOf="@id/btn_contains"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="any操作符"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            />
+
+        <!--isEmpty操作符-->
+        <Button
+            android:id="@+id/btn_is_empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_any"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            android:text="isEmpty操作符"
+            />
+
+        <!--defaultIfEmpty-->
+        <Button
+            android:id="@+id/btn_default_if_empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_is_empty"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            android:text="defaultIfEmpty操作符"
+            />
+
+        <!--switchIfEmpty-->
+        <Button
+            android:id="@+id/btn_switch_if_empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_default_if_empty"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            android:text="switchIfEmpty操作符"
+            />
+
+        <!--sequenceEqual操作符-->
+        <Button
+            android:id="@+id/btn_sequence_equal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_switch_if_empty"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            android:text="sequenceEqual操作符"
+            />
+
+        <!--takeUntil操作符-->
+        <Button
+            android:id="@+id/btn_take_until"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_sequence_equal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textAllCaps="false"
+            android:onClick="doClick"
+            android:text="takeUntil操作符"
+            />
+
+        <!--takeWhile操作符-->
+        <Button
+            android:id="@+id/btn_take_while"
+            style="@style/NormalButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/btn_take_until"
+            android:text="takeWhile操作符"
+            android:onClick="doClick"
+            />
+
+        <!--skipUntil操作符-->
+        <Button
+            android:id="@+id/btn_skip_until"
+            style="@style/NormalButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/btn_take_while"
+            android:text="skipUntil操作符"
+            android:onClick="doClick"
+            />
+
+        <!--skipWhile操作符-->
+        <Button
+            android:id="@+id/btn_skip_while"
+            style="@style/NormalButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/btn_skip_until"
+            android:onClick="doClick"
+            android:text="skipWhile操作符"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

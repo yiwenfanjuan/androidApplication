@@ -98,4 +98,7 @@
     <string name="window_operator_info">
         按照实际划分窗口，将数据发送给不同的observable.
     </string>
+    <string name="title_activity_rx_java_study_transform_operator">
+        RxJavaStudyTransformOperatorActivity
+    </string>
 </resources>

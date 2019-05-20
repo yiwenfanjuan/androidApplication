@@ -24,7 +24,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RxJava.RxJavaStudyFilterOperationActivity"></activity>
+        <activity
+            android:name=".RxJava.RxJavaStudyTransformOperatorActivity"
+            ></activity>
+        <activity android:name=".RxJava.RxJavaStudyConditionOperatorActivity" />
+        <activity android:name=".RxJava.RxJavaStudyMergeOperatorActivity" />
+        <activity android:name=".drawable.DrawableTest1Activity" />
+        <activity android:name=".RxJava.RxJavaStudyFilterOperationActivity" />
         <activity android:name=".amap.AMapTestActivity1" />
         <activity android:name=".RxJava.RxJavaIntroductionActivity" />
         <activity android:name=".RxJava.RxJavaStudyOperator1Activity" />
