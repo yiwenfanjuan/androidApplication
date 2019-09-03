@@ -9,6 +9,7 @@ import android.view.View;
 import com.example.myapplication.RxJava.RxJavaStudyActivity;
 import com.example.myapplication.amap.AMapTestActivity1;
 import com.example.myapplication.drawable.DrawableTest1Activity;
+import com.example.myapplication.glide_test.GlideStudyActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_drawable).setOnClickListener((view) -> {
             startActivity(new Intent(MainActivity.this, DrawableTest1Activity.class));
         });
+
+        findViewById(R.id.btn_glide).setOnClickListener((view)-> startActivity(new Intent(MainActivity.this, GlideStudyActivity.class)));
 
     }
 }
