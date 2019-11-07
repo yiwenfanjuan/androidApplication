@@ -55,4 +55,26 @@
         android:text="Glide开发学习"
         />
 
+    <Button
+        android:id="@+id/btn_material_design"
+        app:layout_constraintTop_toBottomOf="@id/btn_glide"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="MaterialDesign控件学习"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/btn_custom_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="自定义View学习"
+        app:layout_constraintTop_toBottomOf="@id/btn_material_design"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAllCaps="false"
+        />
+
 </android.support.constraint.ConstraintLayout>

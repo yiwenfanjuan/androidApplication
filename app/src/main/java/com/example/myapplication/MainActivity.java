@@ -10,6 +10,8 @@ import com.example.myapplication.RxJava.RxJavaStudyActivity;
 import com.example.myapplication.amap.AMapTestActivity1;
 import com.example.myapplication.drawable.DrawableTest1Activity;
 import com.example.myapplication.glide_test.GlideStudyActivity;
+import com.example.myapplication.material_design_demo.MaterialDesignDemoHomeActivity;
+import com.example.myapplication.view.CustomViewTestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,5 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_glide).setOnClickListener((view)-> startActivity(new Intent(MainActivity.this, GlideStudyActivity.class)));
 
+
+        findViewById(R.id.btn_material_design).setOnClickListener((view)-> startActivity(new Intent(MainActivity.this, MaterialDesignDemoHomeActivity.class)));
+
+        findViewById(R.id.btn_custom_view).setOnClickListener((v) -> startActivity(new Intent(this, CustomViewTestActivity.class)));
     }
 }

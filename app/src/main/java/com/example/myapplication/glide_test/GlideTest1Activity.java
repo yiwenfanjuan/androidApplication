@@ -6,8 +6,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.BaseRequestOptions;
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.ImageViewTarget;
+import com.bumptech.glide.request.target.ViewTarget;
 import com.example.myapplication.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityGlideTest1Binding;
@@ -27,17 +31,21 @@ public class GlideTest1Activity extends BaseActivity<ActivityGlideTest1Binding> 
 
     @Override
     protected void initUi() {
+        RequestOptions options = new RequestOptions()
+                .onlyRetrieveFromCache(true)
+                .diskCacheStrategy(DiskCacheStrategy.ALL);
 
-        Glide.with(this)
-                .asFile()
+        ViewTarget target = Glide.with(this)
                 .load("https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=92afee66fd36afc3110c39658318eb85/908fa0ec08fa513db777cf78376d55fbb3fbd9b3.jpg")
                 .into(mBinding.image);
+
+
 
         getBaseContext().getApplicationContext().registerComponentCallbacks(new TestComponentCallBack());
 
         PermissionUtils permissionUtils = PermissionUtils.getInstance();
         permissionUtils.setPermissionResultListener(this);
-        permissionUtils.with(getSupportFragmentManager(),new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CALL_PHONE});
+        permissionUtils.with(getSupportFragmentManager(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE});
 
     }
 
@@ -53,9 +61,9 @@ public class GlideTest1Activity extends BaseActivity<ActivityGlideTest1Binding> 
 
     @Override
     public void requestPermissionFailed(List<String> failedPermissions) {
-        Log.i(TAG,"以下权限拒绝授予");
-        for(String permission : failedPermissions){
-            Log.i(TAG,permission);
+        Log.i(TAG, "以下权限拒绝授予");
+        for (String permission : failedPermissions) {
+            Log.i(TAG, permission);
         }
     }
 
