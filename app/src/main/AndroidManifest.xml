@@ -26,7 +26,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.SimpleScrollViewActivity"></activity>
+        <activity android:name=".view.CustomHorizontalViewTestActivity"></activity>
+        <activity android:name=".view.TouchEventTestActivity" />
+        <activity android:name=".view.SimpleScrollViewActivity" />
         <activity android:name=".view.CustomViewTestActivity" />
         <activity android:name=".material_design_demo.MaterialDesignDemoHomeActivity" />
         <activity android:name=".material_design_demo.FooterBehaviorDemoActivity" />

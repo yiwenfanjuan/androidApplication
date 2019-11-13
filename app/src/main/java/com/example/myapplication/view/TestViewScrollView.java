@@ -62,7 +62,6 @@ public class TestViewScrollView extends View {
             ((View)getParent()).scrollTo(mScroller.getCurrX(),mScroller.getCurrY());
             invalidate();
         }
-
     }
 
     //一个缓慢滑动地方法

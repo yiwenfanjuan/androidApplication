@@ -35,6 +35,14 @@ public class CustomViewTestActivity extends BaseActivity<ActivityCustomViewTestB
                 //简单的View滚动的方式
                 startActivity(new Intent(this,SimpleScrollViewActivity.class));
                 break;
+            case R.id.btn_touch_test:
+                //点击事件演示
+                startActivity(new Intent(this,TouchEventTestActivity.class));
+                break;
+            case R.id.btn_custom_view_group:
+                //自定义ViewGroup
+                startActivity(new Intent(this,CustomHorizontalViewTestActivity.class));
+                break;
         }
     }
 }
