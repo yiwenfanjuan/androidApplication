@@ -2,14 +2,13 @@ package com.example.myapplication.RxJava;
 
 import android.util.Log;
 
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityRxJavaStudy2Binding;
 
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscription;
 
-import java.io.FileDescriptor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

@@ -1,9 +1,10 @@
 package com.example.myapplication.material_design_demo;
 
 
-import android.support.v7.widget.LinearLayoutManager;
 
-import com.example.myapplication.BaseActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityFooterBehaviorDemoBinding;
 

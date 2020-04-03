@@ -1,20 +1,14 @@
 package com.example.myapplication.RxJava;
 
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityRxJavaStudyFilterOperationBinding;
-
-import org.reactivestreams.Publisher;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
-import io.reactivex.functions.Action;
 import io.reactivex.functions.Predicate;
 
 public class RxJavaStudyFilterOperationActivity extends BaseActivity<ActivityRxJavaStudyFilterOperationBinding> {

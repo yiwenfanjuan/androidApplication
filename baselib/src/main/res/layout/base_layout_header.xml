@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--公共的顶部View-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/color_base_main"
+        >
+
+        <ImageView
+            android:id="@+id/base_iv_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/baselib_back_white"
+            android:scaleType="center"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:onClick="doClick"
+            />
+
+        <TextView
+            android:id="@+id/base_tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:maxLength="20"
+            tools:text="标题部分"
+            android:textStyle="bold"
+            android:text="@{title}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

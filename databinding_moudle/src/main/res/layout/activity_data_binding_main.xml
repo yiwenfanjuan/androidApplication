@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.DataBindingMainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <include
+            android:id="@+id/layout_title"
+            layout="@layout/base_layout_header"
+            bind:title="@{@string/data_binding_main}"
+            />
+
+        <!--学习测试页面1-->
+        <Button
+            android:id="@+id/btn_data_binding_study1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/data_binding_test1"
+            app:layout_constraintTop_toBottomOf="@id/layout_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            android:onClick="doClick"
+            />
+
+        <include
+            android:id="@+id/layout_test_include"
+            layout="@layout/layout_test_include1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_data_binding_study1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            bind:content="@{@string/data_binding_test1}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

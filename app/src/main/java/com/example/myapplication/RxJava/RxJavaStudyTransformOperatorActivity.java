@@ -1,26 +1,15 @@
 package com.example.myapplication.RxJava;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityRxJavaStudyTransformOperatorBinding;
 
-import org.reactivestreams.Publisher;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;

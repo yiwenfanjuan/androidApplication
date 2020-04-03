@@ -1,10 +1,11 @@
 package com.example.myapplication.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
 

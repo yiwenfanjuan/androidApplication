@@ -1,15 +1,11 @@
 package com.example.myapplication.glide_test.test_life_cycle;
 
 
-import android.app.Activity;
 import android.os.Build;
-import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
-import java.lang.annotation.Target;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
 *  @intro 一个简单的权限请求工具类
@@ -37,7 +33,7 @@ public class PermissionUtils {
         return mPermissionUtils;
     }
 
-    public void with(FragmentManager manager,String[] permissions){
+    public void with(FragmentManager manager, String[] permissions){
         if(manager == null){
             if(mResultListener != null){
                 mResultListener.requestPermissionFailed("需要fragmentManager");

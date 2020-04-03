@@ -1,43 +1,29 @@
 package com.example.myapplication.amap;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.Observable;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
-import android.os.PersistableBundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.amap.api.maps.AMap;
-import com.amap.api.maps.CameraUpdate;
 import com.amap.api.maps.CameraUpdateFactory;
-import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.UiSettings;
-import com.amap.api.maps.model.BitmapDescriptor;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.MyLocationStyle;
-import com.example.myapplication.BaseActivity;
-import com.example.myapplication.MainActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityAmapTest1Binding;
-
 import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Single;
-import io.reactivex.functions.BiConsumer;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
@@ -87,6 +73,8 @@ public class AMapTestActivity1 extends BaseActivity<ActivityAmapTest1Binding> im
         setLocationStyle();
     }
 
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -119,7 +107,6 @@ public class AMapTestActivity1 extends BaseActivity<ActivityAmapTest1Binding> im
     @Override
     protected void initUi() {
         //设置图片的marginTop为屏幕的2/3
-
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) mBinding.clContent.getLayoutParams();
         params.topMargin = dm.heightPixels * 2 / 3;

@@ -3,7 +3,7 @@ package com.example.myapplication.RxJava;
 import android.content.Intent;
 import android.view.View;
 
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityRxJavaStudyBinding;
 

@@ -1,23 +1,18 @@
 package com.example.myapplication.glide_test;
 
 import android.Manifest;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.BaseRequestOptions;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.ImageViewTarget;
 import com.bumptech.glide.request.target.ViewTarget;
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityGlideTest1Binding;
 import com.example.myapplication.glide_test.test_life_cycle.PermissionResultListener;
 import com.example.myapplication.glide_test.test_life_cycle.PermissionUtils;
-import com.example.myapplication.glide_test.test_life_cycle.TestAttachLifeCycleFragment;
 import com.example.myapplication.glide_test.test_life_cycle.TestComponentCallBack;
 
 import java.util.List;

@@ -1,19 +1,15 @@
 package com.example.myapplication.RxJava;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityRxJavaStudyConditionOperatorBinding;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Flowable;
-import io.reactivex.SingleObserver;
-import io.reactivex.disposables.Disposable;
 
 /**
  * @description：RxJava2条件操作符

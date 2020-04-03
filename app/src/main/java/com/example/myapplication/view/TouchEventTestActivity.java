@@ -3,7 +3,7 @@ package com.example.myapplication.view;
 
 import android.util.Log;
 import android.view.View;
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivityTouchEventTestBinding;
 

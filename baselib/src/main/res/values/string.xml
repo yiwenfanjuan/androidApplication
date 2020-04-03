@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="base_title_view_empty">顶部View为空</string>
+    <string name="base_back_view_empty">顶部返回键为空</string>
+    <string name="base_title_text_empty">顶部标题为空</string>
+</resources>

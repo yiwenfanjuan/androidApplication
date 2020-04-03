@@ -1,10 +1,10 @@
 package com.example.myapplication;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.view.ViewConfigurationCompat;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.view.ViewConfigurationCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;

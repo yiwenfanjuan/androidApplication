@@ -7,9 +7,11 @@
     tools:context=".RxJava.RxJavaStudyTransformOperatorActivity"
     >
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
         <!--map操作符-->
         <Button
             android:id="@+id/btn_map"
@@ -105,6 +107,6 @@
             style="@style/NormalButtonStyle"
             android:text="toMap操作符"
             />
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
 
 </layout>

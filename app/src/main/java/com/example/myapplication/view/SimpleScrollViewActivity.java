@@ -1,9 +1,6 @@
 package com.example.myapplication.view;
 
-import android.os.Bundle;
-import android.view.animation.AnimationUtils;
-
-import com.example.myapplication.BaseActivity;
+import com.project.baselib.ui.BaseActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.databinding.ActivitySimpleScrollViewBinding;
 
