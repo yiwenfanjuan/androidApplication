@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 //签名文件配置
 def keystorePropertiesFile = rootProject.file("app/myApplicationKeystore.properties")
@@ -47,11 +49,13 @@ android {
         enabled = true
     }
 
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -68,4 +72,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation project(':databinding_moudle')
     implementation project(':baselib')
+}
+kapt {
+    generateStubs = true
 }
