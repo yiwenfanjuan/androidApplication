@@ -1,25 +1,43 @@
 package com.project.databinding_moudle.ui
 
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import androidx.databinding.ObservableArrayList
-import androidx.databinding.ObservableArrayMap
-import androidx.databinding.PropertyChangeRegistry
+import android.view.ViewGroup
+import android.view.ViewStub
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.databinding.*
 import com.project.baselib.ui.BaseActivity
 import com.project.databinding_moudle.R
 import com.project.databinding_moudle.data.Person
 import com.project.databinding_moudle.data.Student
 import com.project.databinding_moudle.data.Teacher
+import com.project.databinding_moudle.data.User
 import com.project.databinding_moudle.databinding.ActivityDataBindingTest2Binding
+import com.project.databinding_moudle.databinding.LayoutTestBinding
 
 class DataBindingTest2Activity : BaseActivity<ActivityDataBindingTest2Binding>() {
 
     private val person = Person()
     private val student: Student = Student()
+    private lateinit var mLayoutTestBinding: LayoutTestBinding
 
     override fun getLayoutId(): Int = R.layout.activity_data_binding_test2
 
     override fun initUi() {
-
+//        val binding = DataBindingUtil.inflate<LayoutTestBinding>(LayoutInflater.from(this),R.layout.layout_test,null,false)
+//        val params = ConstraintLayout.LayoutParams(0,ConstraintLayout.LayoutParams.WRAP_CONTENT)
+//        params.topToBottom = R.id.tv_content4
+//        params.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID
+//        params.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID
+//        val view = binding.root
+//        view.layoutParams = params
+//        (mBinding.root as ViewGroup).addView(view)
+        mBinding.vsTest.setOnInflateListener{
+            stub,view ->
+                mLayoutTestBinding = DataBindingUtil.bind<LayoutTestBinding>(view)!!
+                mLayoutTestBinding.user = User("赵六",20,"2324")
+        }
     }
 
     override fun initData() {
@@ -33,6 +51,7 @@ class DataBindingTest2Activity : BaseActivity<ActivityDataBindingTest2Binding>()
         val map = ObservableArrayMap<String,Any>().apply {
             put("lastName","三")
             put("age",17)
+
         }
         mBinding.userMap = map
         map["firstName"] = "张"
@@ -64,6 +83,9 @@ class DataBindingTest2Activity : BaseActivity<ActivityDataBindingTest2Binding>()
         }else if(view?.id == R.id.btn_change_student_data){
             student.name = "小红"
             student.age = 12
+        }else if(view?.id == R.id.btn_load_view_stub){
+            if(!mBinding.vsTest.isInflated)
+                mBinding.vsTest.viewStub?.inflate()
         }
 
     }

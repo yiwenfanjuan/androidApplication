@@ -41,6 +41,19 @@
             android:layout_marginTop="10dp"
             android:onClick="doClick"
             />
+
+        <!--学习测试页面3-->
+        <Button
+            android:id="@+id/btn_data_binding_study3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/data_binding_test3"
+            app:layout_constraintTop_toBottomOf="@id/btn_data_binding_study2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            android:onClick="doClick"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
