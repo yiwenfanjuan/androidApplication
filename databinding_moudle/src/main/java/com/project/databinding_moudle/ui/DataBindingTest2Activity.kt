@@ -36,7 +36,6 @@ class DataBindingTest2Activity : BaseActivity<ActivityDataBindingTest2Binding>()
         mBinding.vsTest.setOnInflateListener{
             stub,view ->
                 mLayoutTestBinding = DataBindingUtil.bind<LayoutTestBinding>(view)!!
-                mLayoutTestBinding.user = User("赵六",20,"2324")
         }
     }
 

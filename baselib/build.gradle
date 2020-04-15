@@ -38,6 +38,9 @@ dependencies {
     api 'com.google.android.material:material:1.1.0'
     api 'androidx.multidex:multidex:2.0.1'
     testApi 'junit:junit:4.13'
+    //glide图片加载
+    api 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
 kapt {
     generateStubs = true

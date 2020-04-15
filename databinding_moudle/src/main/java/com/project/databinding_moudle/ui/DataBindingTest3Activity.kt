@@ -28,7 +28,7 @@ class DataBindingTest3Activity : BaseActivity<ActivityDataBindingTest3Binding>()
 
         val list = mutableListOf<User>()
         for(i in 0..9){
-            val user: User = User("姓名$i",i+ 1, (i + 100).toString())
+            val user: User = User("姓名$i",i+ 1, (i + 100).toString(),null)
             list.add(user)
         }
         adapter = MyRVAdapter(this,R.layout.item_user_info,list)

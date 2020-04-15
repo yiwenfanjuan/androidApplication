@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.DataBindingTest4Activity">
+
+    <data>
+
+        <variable
+            name="student"
+            type="com.project.databinding_moudle.data.Student"
+            />
+        <variable
+            name="textChangeListener"
+            type="androidx.databinding.adapters.TextViewBindingAdapter.OnTextChanged"
+            />
+        <variable
+            name="user"
+            type="com.project.databinding_moudle.data.User"
+            />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <include
+            layout="@layout/base_layout_header"
+            android:id="@+id/layout_title"
+            bind:title= "@{@string/data_binding_test4}"
+            />
+
+        <EditText
+            android:id="@+id/et_info"
+            style="@style/match_width"
+            app:layout_constraintTop_toBottomOf="@id/layout_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="10dp"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textSize="14sp"
+            android:onTextChanged="@{textChangeListener}"
+            />
+
+        <com.project.databinding_moudle.widget.ToastTextView
+            android:id="@+id/tv_user_name"
+            style="@style/match_width"
+            app:layout_constraintTop_toBottomOf="@id/et_info"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@{student.name}"
+            app:toast="@{student.name}"
+            />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/match_width"
+            app:layout_constraintTop_toBottomOf="@id/tv_user_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            android:text="@{student.name}"
+            android:background="@android:color/black"
+            setMarginLeft="@{200}"
+            />
+        <!--加载图片-->
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            app:url = "@{user.head}"
+            app:placeHolder="@{@drawable/ic_launcher}"
+            />
+
+        <!--替换旧值-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="BindingAdapter中新值替换旧值"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

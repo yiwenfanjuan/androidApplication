@@ -8,4 +8,6 @@ package com.project.databinding_moudle.data
  */
 data class User(val name: String,
                 val age: Int,
-                val phone: String)
+                val phone: String,
+                val head: String?
+)

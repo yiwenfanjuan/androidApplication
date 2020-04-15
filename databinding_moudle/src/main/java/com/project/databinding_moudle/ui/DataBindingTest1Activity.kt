@@ -37,7 +37,7 @@ class DataBindingTest1Activity : BaseActivity<ActivityDataBindingTest1Binding>()
     }
 
     override fun initData() {
-        val user: User = User("name",20,"1232142134")
+        val user: User = User("name",20,"1232142134",null)
         findViewById<TextView>(R.id.tv_content1).apply {
             text = user.name
         }

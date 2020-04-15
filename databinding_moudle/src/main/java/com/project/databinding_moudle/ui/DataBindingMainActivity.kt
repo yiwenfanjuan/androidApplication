@@ -35,6 +35,9 @@ class DataBindingMainActivity : BaseActivity<ActivityDataBindingMainBinding>() {
         }else if(view?.id == R.id.btn_data_binding_study3){
             intent.setClass(this,DataBindingTest3Activity::class.java)
             startActivity(intent)
+        }else if(view?.id == R.id.btn_data_binding_study4){
+            intent.setClass(this,DataBindingTest4Activity::class.java)
+            startActivity(intent)
         }
     }
 
