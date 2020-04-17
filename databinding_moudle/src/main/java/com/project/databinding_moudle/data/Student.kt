@@ -10,7 +10,13 @@ import com.project.databinding_moudle.BR
  *@description
  *@introduction
  */
-class Student : BaseObservable() {
+class Student() : BaseObservable() {
+
+    constructor(name: String,age: Int,sid: String): this(){
+        this.name = name
+        this.age = age
+        this.sid = sid
+    }
     @get:Bindable
     var name: String = ""
         set(value) {
@@ -23,5 +29,11 @@ class Student : BaseObservable() {
         set(value) {
             field = value
             notifyPropertyChanged(BR.age)
+        }
+    @get:Bindable
+    var sid: String = "学号"
+        set(value){
+            field = value
+            notifyPropertyChanged(BR.sid)
         }
 }

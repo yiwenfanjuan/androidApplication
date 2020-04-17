@@ -10,7 +10,7 @@ import kotlin.properties.Delegates
  *@description
  *@introduction
  */
-class MyRVAdapter<D,T: ViewDataBinding> : BaseRVAdapter<D, T> {
+open class MyRVAdapter<D,T: ViewDataBinding> : BaseRVAdapter<D, T> {
 
     private var layoutResource: Int
 

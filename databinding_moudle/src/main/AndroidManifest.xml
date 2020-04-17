@@ -12,7 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".ui.DataBindingTest4Activity"></activity>
+        <activity android:name=".ui.viewmodel.ViewModelTest1Activity"></activity>
+        <activity android:name=".ui.lifecycle.LifecycleTest1Activity" />
+        <activity android:name=".ui.DataBindingTest4Activity" />
         <activity android:name=".ui.DataBindingTest3Activity" />
         <activity android:name=".ui.DataBindingTest2Activity" />
         <activity android:name=".ui.DataBindingTest1Activity" />

@@ -5,6 +5,8 @@ import android.view.View
 import com.project.baselib.ui.BaseActivity
 import com.project.databinding_moudle.R
 import com.project.databinding_moudle.databinding.ActivityDataBindingMainBinding
+import com.project.databinding_moudle.ui.lifecycle.LifecycleTest1Activity
+import com.project.databinding_moudle.ui.viewmodel.ViewModelTest1Activity
 
 
 class DataBindingMainActivity : BaseActivity<ActivityDataBindingMainBinding>() {
@@ -37,6 +39,12 @@ class DataBindingMainActivity : BaseActivity<ActivityDataBindingMainBinding>() {
             startActivity(intent)
         }else if(view?.id == R.id.btn_data_binding_study4){
             intent.setClass(this,DataBindingTest4Activity::class.java)
+            startActivity(intent)
+        }else if(view?.id == R.id.btn_life_cycle1){
+            intent.setClass(this,LifecycleTest1Activity::class.java)
+            startActivity(intent)
+        }else if(view?.id == R.id.btn_view_model1){
+            intent.setClass(this,ViewModelTest1Activity::class.java)
             startActivity(intent)
         }
     }
